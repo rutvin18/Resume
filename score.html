@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cricket Scoreboard</title>
+  </head>
+  <body>
+    
+    <h1>Cricket Scoreboard</h1>
+    <form>
+      <label>Team 1:</label>
+      <input type="text" name="team1Score"><br><br>
+      <label>Team 2:</label>
+      <input type="text" name="team2Score"><br><br>
+      <input type="button" value="Submit" onclick="displayResult()">
+    </form>
+    <br>
+    <div id="result"></div>
+    <script>
+      function displayResult() {
+        var team1Score = document.querySelector('input[name="team1Score"]').value;
+        var team2Score = document.querySelector('input[name="team2Score"]').value;
+        if (parseInt(team1Score) > parseInt(team2Score)) {
+          document.querySelector('#result').innerHTML = "Team 1 wins!";
+        } else if (parseInt(team1Score) < parseInt(team2Score)) {
+          document.querySelector('#result').innerHTML = "Team 2 wins!";
+        } else {
+          document.querySelector('#result').innerHTML = "It's a tie!";
+        }
+      }
+    </script>
+  </body>
+</html>
